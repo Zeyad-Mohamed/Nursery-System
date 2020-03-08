@@ -1,0 +1,11 @@
+D:\Msa\Year 3\Semester 1\Object Oriented\New Project\OOP1\Nur.DB.DBA\bin\Debug\Nur.DB.DBA.dll.config
+D:\Msa\Year 3\Semester 1\Object Oriented\New Project\OOP1\Nur.DB.DBA\bin\Debug\Nur.DB.DBA.dll
+D:\Msa\Year 3\Semester 1\Object Oriented\New Project\OOP1\Nur.DB.DBA\bin\Debug\Nur.DB.DBA.pdb
+D:\Msa\Year 3\Semester 1\Object Oriented\New Project\OOP1\Nur.DB.DBA\bin\Debug\EntityFramework.dll
+D:\Msa\Year 3\Semester 1\Object Oriented\New Project\OOP1\Nur.DB.DBA\bin\Debug\EntityFramework.SqlServer.dll
+D:\Msa\Year 3\Semester 1\Object Oriented\New Project\OOP1\Nur.DB.DBA\bin\Debug\EntityFramework.xml
+D:\Msa\Year 3\Semester 1\Object Oriented\New Project\OOP1\Nur.DB.DBA\bin\Debug\EntityFramework.SqlServer.xml
+D:\Msa\Year 3\Semester 1\Object Oriented\New Project\OOP1\Nur.DB.DBA\obj\Debug\Nur.DB.DBA.csprojAssemblyReference.cache
+D:\Msa\Year 3\Semester 1\Object Oriented\New Project\OOP1\Nur.DB.DBA\obj\Debug\Nur.DB.DBA.csproj.CopyComplete
+D:\Msa\Year 3\Semester 1\Object Oriented\New Project\OOP1\Nur.DB.DBA\obj\Debug\Nur.DB.DBA.dll
+D:\Msa\Year 3\Semester 1\Object Oriented\New Project\OOP1\Nur.DB.DBA\obj\Debug\Nur.DB.DBA.pdb

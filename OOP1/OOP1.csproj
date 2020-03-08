@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A59CF724-5AA2-40F0-9153-11B7838B7776}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OOP1</RootNamespace>
+    <AssemblyName>OOP1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OfficeComponent.HtmlToPdf.x64">
+      <HintPath>..\..\..\..\..\..\..\lib2\Bin\Net\OfficeComponent.HtmlToPdf.x64.dll</HintPath>
+    </Reference>
+    <Reference Include="OfficeComponent.Pdf">
+      <HintPath>..\..\..\..\..\..\..\lib2\Bin\Net\OfficeComponent.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.7.46, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.PDF.5.12.15\lib\net46\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=5.12.15.2046, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.PDF.5.12.15\lib\net46\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="M_Buses.cs" />
+    <Compile Include="IDisplay.cs" />
+    <Compile Include="IObserver.cs" />
+    <Compile Include="ISubject.cs" />
+    <Compile Include="M_ConnSingleton.cs" />
+    <Compile Include="M_Cstudent.cs" />
+    <Compile Include="M_Notifications.cs" />
+    <Compile Include="M_Service.cs" />
+    <Compile Include="SAUD.cs" />
+    <Compile Include="VC_Buses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_Buses.Designer.cs">
+      <DependentUpon>VC_Buses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="M_Attendance.cs" />
+    <Compile Include="M_CUser.cs" />
+    <Compile Include="M_Events.cs" />
+    <Compile Include="M_Genral.cs" />
+    <Compile Include="M_Kids.cs" />
+    <Compile Include="M_Utilities.cs" />
+    <Compile Include="VC_Attendace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_Attendace.designer.cs">
+      <DependentUpon>VC_Attendace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VC_Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_Invoice.designer.cs">
+      <DependentUpon>VC_Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VC_Receptionist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_Receptionist.Designer.cs">
+      <DependentUpon>VC_Receptionist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VC_Events.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_Events.Designer.cs">
+      <DependentUpon>VC_Events.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VC_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_Report.designer.cs">
+      <DependentUpon>VC_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VC_Teachers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_Teachers.Designer.cs">
+      <DependentUpon>VC_Teachers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VC_AddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_AddForm.Designer.cs">
+      <DependentUpon>VC_AddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VC_Kids.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_Kids.designer.cs">
+      <DependentUpon>VC_Kids.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VC_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_Manager.designer.cs">
+      <DependentUpon>VC_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VC_UserAU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_UserAU.Designer.cs">
+      <DependentUpon>VC_UserAU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VC_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_Login.Designer.cs">
+      <DependentUpon>VC_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VC_UsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_UsersForm.Designer.cs">
+      <DependentUpon>VC_UsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VC_UtilitesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VC_UtilitesForm.Designer.cs">
+      <DependentUpon>VC_UtilitesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V_DatagridView.cs" />
+    <EmbeddedResource Include="VC_Buses.resx">
+      <DependentUpon>VC_Buses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VC_Attendace.resx">
+      <DependentUpon>VC_Attendace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VC_Invoice.resx">
+      <DependentUpon>VC_Invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VC_Receptionist.resx">
+      <DependentUpon>VC_Receptionist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VC_Events.resx">
+      <DependentUpon>VC_Events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VC_Report.resx">
+      <DependentUpon>VC_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VC_Teachers.resx">
+      <DependentUpon>VC_Teachers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VC_AddForm.resx">
+      <DependentUpon>VC_AddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VC_Kids.resx">
+      <DependentUpon>VC_Kids.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VC_Manager.resx">
+      <DependentUpon>VC_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VC_UserAU.resx">
+      <DependentUpon>VC_UserAU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VC_Login.resx">
+      <DependentUpon>VC_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="VC_UsersForm.resx">
+      <DependentUpon>VC_UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VC_UtilitesForm.resx">
+      <DependentUpon>VC_UtilitesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

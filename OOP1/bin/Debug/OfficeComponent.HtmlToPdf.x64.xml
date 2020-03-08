@@ -1,0 +1,750 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OfficeComponent.HtmlToPdf.x64</name>
+    </assembly>
+    <members>
+        <member name="T:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseExceptionStatus">
+            <summary>
+            License check status.
+            </summary>
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="F:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseExceptionStatus.InvalidKey">
+            <summary>
+            Invalid license key.
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseExceptionStatus.InvalidDate">
+            <summary>
+            Expiry date is invalid.
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseExceptionStatus.LicenseExpired">
+            <summary>
+            License is expired.
+            </summary>
+        </member>
+        <member name="T:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseException">
+            <summary>Represents the License Exception.</summary>
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseException.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseException"></see> class with the specified error message.</summary>
+            <param name="message">A <see cref="T:System.String"></see> that describes the error that occurred.</param>
+        </member>
+        <member name="M:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Initializes a new instance of the <see cref="T:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseException"></see> class from the specified instances of the <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> and <see cref="T:System.Runtime.Serialization.StreamingContext"></see> classes. </summary>
+            <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that contains the information required to serialize the new <see cref="T:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseException"></see>. </param>
+            <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains the source and destination of the serialized stream associated with the new instance. </param>
+        </member>
+        <member name="M:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseException.#ctor(System.String,System.Exception)">
+            <summary>Initializes a new instance of the <see cref="T:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseException"></see> class with the specified error message and inner exception.</summary>
+            <param name="message">A <see cref="T:System.String"></see> that describes the error that occurred.</param>
+            <param name="innerException">The exception that is the cause of the current exception. </param>
+        </member>
+        <member name="M:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Populates a <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> instance with the data needed to serialize the <see cref="T:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseException"></see>.</summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> to populate with data. </param>
+            <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that specifies the destination for this serialization.</param>
+        </member>
+        <member name="P:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseException.Status">
+            <summary>Gets the error code.</summary>
+            <returns>An <see cref="T:OfficeComponent.Licensing.HtmlToPdf.UltimateLicenseExceptionStatus"></see> value that indicates the error that occurred.</returns>
+        </member>
+        <member name="T:OfficeComponent.Licensing.HtmlToPdf.LicenseManager">
+            <summary>
+            OfficeComponent License Manager.
+            </summary>
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:OfficeComponent.Licensing.HtmlToPdf.LicenseManager.SetLicenseKey(System.String)">
+            <summary>
+            Sets the trial license key.
+            </summary>
+            <param name="licenseKey">The trial license key string.</param>
+        </member>
+        <member name="P:OfficeComponent.Licensing.HtmlToPdf.LicenseManager.RemainingDays">
+            <summary>
+            Gets remaining trial days.
+            </summary>
+        </member>
+        <member name="T:OfficeComponent.HtmlToPdf.AsyncEventArgs">
+            <summary>
+            Represents an asynchronous EventArgs that has members to determine whether it's raised by an asynchronous operation and get the user-defined object.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.AsyncEventArgs.AsyncCall">
+            <summary>
+            Gets a boolean value indicating whether the event is raised in an asynchronous call.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.AsyncEventArgs.UserState">
+            <summary>
+            Gets the user-token specified in an asynchronous call.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.IAsyncProvider.InvokeFromCurrentThreads">
+            <summary>
+            Gets a value indicating whether to raise events from the current thread or 
+            to use a <see cref="T:System.Threading.SynchronizationContext" /> object available when an asynchronous operation was started.
+            The default value is <c>false</c>.
+            </summary>
+            <value><c>true</c> to raise events directly from the current working thread; 
+            <c>false</c> to raise them using a <see cref="T:System.Threading.SynchronizationContext" /> object.</value>
+            <remarks>
+            Synchronous methods always raise events from the current working thread.
+            </remarks>
+        </member>
+        <member name="T:OfficeComponent.HtmlToPdf.ExtendedAsyncCompletedEventHandler`1">
+            <summary>
+            Represents the method that will handle the asynchronous method completion events.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">An <see cref="T:OfficeComponent.HtmlToPdf.ExtendedAsyncCompletedEventArgs`1"/> that contains event data.</param>
+            <typeparam name="TResult">The type of the result produced by an asynchronous operation.</typeparam>
+            <remarks>
+            In .NET 4.5 and higher it's recommended to use <c>async</c> and <c>await</c> modifiers for asynchronous operations.
+            </remarks>
+        </member>
+        <member name="T:OfficeComponent.HtmlToPdf.ExtendedAsyncCompletedEventArgs`1">
+            <summary>
+            Provides data for the asynchronous method completion events.
+            </summary>
+            <typeparam name="TResult">The type of the result produced by an asynchronous operation.</typeparam>
+            <remarks>
+            In .NET 4.5 and higher it's recommended to use <c>async</c> and <c>await</c> modifiers for asynchronous operations.
+            </remarks>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.ExtendedAsyncCompletedEventArgs`1.Result">
+            <summary>
+            Gets the asynchronous operation result.
+            </summary>
+        </member>
+        <member name="T:OfficeComponent.HtmlToPdf.HtmlToPdfException">
+            <summary>
+            Represents the converter exception object.
+            </summary>
+        </member>
+        <member name="T:OfficeComponent.HtmlToPdf.HtmlToPdfConverter">
+            <summary>
+            The HTML to PDF converter class that provides useful properties and methods to convert HTML web page in URL or string to PDF document.
+            The output can be stored in byte array, stream or local file.
+            </summary>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertAsync(System.String,System.String,System.ComponentModel.AsyncCompletedEventHandler,System.Object)">
+            <summary>
+            Converts the HTML webpage at the specified URL to PDF file asynchronously.
+            </summary>
+            <param name="url">The URL of the web page to convert to PDF.</param>
+            <param name="outputFile">The path to the output PDF file.</param>
+            <param name="callback">An optional asynchronous callback to be called when the operation is complete.</param>
+            <param name="userState">A user-provided object that identifies this particular asynchronous operation.</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertStringAsync(System.String,System.String,System.String,System.ComponentModel.AsyncCompletedEventHandler,System.Object)">
+            <summary>
+            Converts the specified HTML string to a PDF file asynchronously.
+            </summary>
+            <param name="htmlString">The input HTML string.</param>
+            <param name="baseUrl">External objects such as stylesheets or images referenced in the HTML document are located relative to baseUrl.</param>
+            <param name="outputFile">The path to the output PDF file.</param>
+            <param name="callback">An optional asynchronous callback to be called when the operation is complete.</param>
+            <param name="userState">A user-provided object that identifies this particular asynchronous operation.</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertToImageAsync(System.String,System.String,System.ComponentModel.AsyncCompletedEventHandler,System.Object)">
+            <summary>
+            Converts the HTML webpage at the specified URL to PDF file asynchronously.
+            </summary>
+            <param name="url">The URL of the web page to convert to PDF.</param>
+            <param name="outputFile">The path to the output PDF file.</param>
+            <param name="callback">An optional asynchronous callback to be called when the operation is complete.</param>
+            <param name="userState">A user-provided object that identifies this particular asynchronous operation.</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertStringToImageAsync(System.String,System.String,System.String,System.ComponentModel.AsyncCompletedEventHandler,System.Object)">
+            <summary>
+            Converts the specified HTML string to a PDF file asynchronously.
+            </summary>
+            <param name="htmlString">The input HTML string.</param>
+            <param name="baseUrl">External objects such as stylesheets or images referenced in the HTML document are located relative to baseUrl.</param>
+            <param name="outputFile">The path to the output PDF file.</param>
+            <param name="callback">An optional asynchronous callback to be called when the operation is complete.</param>
+            <param name="userState">A user-provided object that identifies this particular asynchronous operation.</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertString(System.String,System.String)">
+            <summary>
+            Converts the specified HTML string to PDF and write to a byte array.
+            </summary>
+            <param name="htmlString">The input HTML string.</param>
+            <param name="baseUrl">External objects such as stylesheets or images referenced in the HTML document are located relative to baseUrl.</param>
+            <returns>The converted PDF document in byte array.</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertString(System.String,System.String,System.IO.Stream)">
+            <summary>
+            Converts the specified HTML string to PDF and write to a data stream.
+            </summary>
+            <param name="htmlString">The input HTML string.</param>
+            <param name="baseUrl">External objects such as stylesheets or images referenced in the HTML document are located relative to baseUrl.</param>
+            <param name="outputStream">The output data stream.</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertString(System.String,System.String,System.String)">
+            <summary>
+            Converts the specified HTML string to a PDF file.
+            </summary>
+            <param name="htmlString">The input HTML string.</param>
+            <param name="baseUrl">External objects such as stylesheets or images referenced in the HTML document are located relative to baseUrl.</param>
+            <param name="outputFile">The path to the output PDF file.</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.Convert(System.String)">
+            <summary>
+            Converts the HTML webpage at the specified URL to PDF and write to a byte array.
+            </summary>
+            <param name="url">The URL of the web page to convert to PDF.</param>
+            <returns>The converted PDF document in byte array.</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.Convert(System.String,System.IO.Stream)">
+            <summary>
+            Converts the HTML webpage at the specified URL to PDF and write to the data stream.
+            </summary>
+            <param name="url">The URL of the web page to convert to PDF.</param>
+            <param name="outputStream">The output data stream.</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.Convert(System.String,System.String)">
+            <summary>
+            Converts the HTML webpage at the specified URL to PDF file.
+            </summary>
+            <param name="url">The URL of the web page to convert to PDF.</param>
+            <param name="outputFile">The path to the output PDF file.</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertStringToImage(System.String,System.String)">
+            <summary>
+            Converts the specified HTML string to PDF and write to a byte array.
+            </summary>
+            <param name="htmlString">The input HTML string.</param>
+            <param name="baseUrl">External objects such as stylesheets or images referenced in the HTML document are located relative to baseUrl.</param>
+            <returns>The converted PDF document in byte array.</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertStringToImage(System.String,System.String,System.IO.Stream)">
+            <summary>
+            Converts the specified HTML string to PDF and write to a data stream.
+            </summary>
+            <param name="htmlString">The input HTML string.</param>
+            <param name="baseUrl">External objects such as stylesheets or images referenced in the HTML document are located relative to baseUrl.</param>
+            <param name="outputStream">The output data stream.</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertStringToImage(System.String,System.String,System.String)">
+            <summary>
+            Converts the specified HTML string to a PDF file.
+            </summary>
+            <param name="htmlString">The input HTML string.</param>
+            <param name="baseUrl">External objects such as stylesheets or images referenced in the HTML document are located relative to baseUrl.</param>
+            <param name="outputFile">The path to the output PDF file.</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertToImage(System.String)">
+            <summary>
+            Converts the HTML webpage at the specified URL to PDF and write to a byte array.
+            </summary>
+            <param name="url">The URL of the web page to convert to PDF.</param>
+            <returns>The converted PDF document in byte array.</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertToImage(System.String,System.IO.Stream)">
+            <summary>
+            Converts the HTML webpage at the specified URL to PDF and write to the data stream.
+            </summary>
+            <param name="url">The URL of the web page to convert to PDF.</param>
+            <param name="outputStream">The output data stream.</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ConvertToImage(System.String,System.String)">
+            <summary>
+            Converts the HTML webpage at the specified URL to PDF file.
+            </summary>
+            <param name="url">The URL of the web page to convert to PDF.</param>
+            <param name="outputFile">The path to the output PDF file.</param>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.LogFile">
+            <summary>
+            Gets or sets the log file path. Set this property in the beginning of your app before any conversion.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ImageCrop">
+            <summary>
+            Gets or sets the image crop dimension used in the <see cref="O:ConvertToImage"/> methods.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.TransparentImageBackground">
+            <summary>
+            Gets or sets a boolean value indicating whether the output images converted by the <see cref="O:ConvertToImage"/> methods should have transparent background.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ImageFormat">
+            <summary>
+            Gets or sets the format of the output image converted by the <see cref="O:ConvertToImage"/> methods.
+            The value can either be "png", "svg", "jpg", "tiff", or "bmp".
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ImageQuality">
+            <summary>
+            Gets or sets the quality of the output image converted by the <see cref="O:ConvertToImage"/> methods. Default value is -1: choose the best image quality.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.SinglePage">
+            <summary>
+            Gets or sets a value indicating whether to render the whole web page in a single PDF page. Default value is <c>false</c>.
+            </summary>
+            <remarks>This property is only used for HTML to PDF conversion methods: <see cref="O:Convert"/> and <see cref="O:ConvertString"/>.</remarks>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.Portrait">
+            <summary>
+            Gets or sets the PDF page orientation. Default value is <c>true</c>.
+            </summary>
+            <remarks>This property is only used for HTML to PDF conversion methods: <see cref="O:Convert"/> and <see cref="O:ConvertString"/>.</remarks>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.PageSize">
+            <summary>
+            Gets or sets the PDF page size.
+            </summary>
+            <remarks>This property is only used for HTML to PDF conversion methods: <see cref="O:Convert"/> and <see cref="O:ConvertString"/>.</remarks>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.PageMargin">
+            <summary>
+            Gets or sets the PDF page margin. Default value is zero.
+            </summary>
+            <remarks>This property is only used for HTML to PDF conversion methods: <see cref="O:Convert"/> and <see cref="O:ConvertString"/>.</remarks>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.InvokeFromCurrentThreads">
+            <summary>
+            Gets a value indicating whether to raise events from the current thread or 
+            to use a <see cref="T:System.Threading.SynchronizationContext" /> object available when an asynchronous operation was started.
+            The default value is <c>false</c>.
+            </summary>
+            <value><c>true</c> to raise events directly from the current working thread; 
+            <c>false</c> to raise them using a <see cref="T:System.Threading.SynchronizationContext" /> object.</value>
+            <remarks>
+            Synchronous methods always raise events from the current working thread.
+            </remarks>
+        </member>
+        <member name="E:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.Progress">
+            <summary>
+            Raised for each reported progress value.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.DefaultHtmlEncoding">
+            <summary>
+            Gets or sets the default HTML text encoding.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.JavaScriptEnabled">
+            <summary>
+            Gets or sets a value indicating whether to enable JavaScript.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ViewportWidth">
+            <summary>
+            Gets or sets the viewport width in pixels.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ViewportHeight">
+            <summary>
+            Gets or sets the viewport height in pixels.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ViewZoom">
+            <summary>
+            Gets or sets the zoom factor for the view. Default value is 1.0.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.Delay">
+            <summary>
+            Gets or sets the number of milliseconds waited before converting to PDF. Default value is 3000ms (3 secs).
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.WaitMode">
+            <summary>
+            Gets or sets the webpage wait mode.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.UseOrOperatorInWaitMode">
+            <summary>
+            Gets or sets a value indicating whether to start rendering whenever a condition specified <see cref="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.WaitMode"/> is met. Default value is <c>false</c> - all conditions must be met before rendering HTML.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.Timeout">
+            <summary>
+            Gets or sets the converter navigation timeout in milliseconds. Default value is 60000ms (60 secs - 1 min).
+            Set this value to 0 to indicate that the converter navigation will never timeout.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.LocalStorageEnabled">
+            <summary>
+            Gets or sets the value indicating whether support for the HTML 5 local storage feature is enabled or not. This is disabled by default.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.ExtensionsEnabled">
+            <summary>
+            Gets or sets a value indicating whether to enable plugins in web page. This is disabled by default.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.RenderElementBackgrounds">
+            <summary>
+            Gets or sets the value indicating whether the background color and images are also drawn when the page is printed. This is enabled by default.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.Accelerated2dCanvasEnabled">
+            <summary>
+            Gets or sets the value indicating whether the HTML 2D canvas should be a OpenGL framebuffer. This makes many painting operations faster, but slows down pixel access. This is disabled by default.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.WebGLEnabled">
+            <summary>
+            Gets or sets the value indicating whether to enables support for WebGL. It is enabled by default.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.MediaType">
+            <summary>
+            Gets or sets the CSS media type. Default value is not set, meaning 'screen' media type is used.
+            When set to 'print' the CSS properties defined in '@media print' rule will be used to render the web page.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when setting this property while a conversion is still in progress.</exception>
+        </member>
+        <member name="T:OfficeComponent.HtmlToPdf.ConverterProgressEventArgs">
+            <summary>
+            Represents the event data for the <see cref="E:OfficeComponent.HtmlToPdf.HtmlToPdfConverter.Progress"/> event.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.ConverterProgressEventArgs.Progress">
+            <summary>
+            Gets the current percentage of the conversion progress.
+            </summary>
+        </member>
+        <member name="T:OfficeComponent.HtmlToPdf.PageSizeUnit">
+            <summary>
+            Specifies the measurement unit for PDF page sizes.
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PageSizeUnit.Millimeter">
+            <summary>
+            Millimeter
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PageSizeUnit.Point">
+            <summary>
+            1/72th of an inch
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PageSizeUnit.Inch">
+            <summary>
+            Inch
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PageSizeUnit.Pica">
+            <summary>
+            1/72th of a foot, 1/6th of an inch, 12 Points
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PageSizeUnit.Didot">
+            <summary>
+            1/72th of a French inch, 0.375 mm
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PageSizeUnit.Cicero">
+            <summary>
+            1/6th of a French inch, 12 Didot, 4.5mm
+            </summary>
+        </member>
+        <member name="T:OfficeComponent.HtmlToPdf.PageMargins">
+            <summary>
+            Represents the PDF page margins.
+            </summary>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PageMargins.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OfficeComponent.HtmlToPdf.PageMargins"/> class.
+            </summary>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PageMargins.#ctor(System.Single,System.Single,System.Single,System.Single,OfficeComponent.HtmlToPdf.PageSizeUnit)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OfficeComponent.HtmlToPdf.PageMargins"/> class.
+            </summary>
+            <param name="left">The left margin.</param>
+            <param name="top">The top margin.</param>
+            <param name="right">The right margin.</param>
+            <param name="bottom">The bottom margin.</param>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.PageMargins.Left">
+            <summary>
+            Gets or sets the left margin.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.PageMargins.Top">
+            <summary>
+            Gets or sets the top margin.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.PageMargins.Right">
+            <summary>
+            Gets or sets the right margin.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.PageMargins.Bottom">
+            <summary>
+            Gets or sets the bottom margin.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.PageMargins.Unit">
+            <summary>
+            Gets or sets the page margins unit.
+            </summary>
+        </member>
+        <member name="T:OfficeComponent.HtmlToPdf.PageSize">
+            <summary>
+            Represents the PDF page size in points.
+            </summary>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PageSize.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OfficeComponent.HtmlToPdf.PageSize"/>.
+            </summary>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PageSize.#ctor(System.Single,System.Single,OfficeComponent.HtmlToPdf.PageSizeUnit)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OfficeComponent.HtmlToPdf.PageSize"/>.
+            </summary>
+            <param name="width">The page width.</param>
+            <param name="height">The page height.</param>
+            <param name="unit">The page unit. Default value is <see cref="T:OfficeComponent.HtmlToPdf.PageSizeUnit">point</see>.</param>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.PageSize.Unit">
+            <summary>
+            Gets or sets the measurement unit. Default value is <see cref="T:OfficeComponent.HtmlToPdf.PageSizeUnit">point</see>.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.PageSize.Width">
+            <summary>
+            Gets or sets the page width in mm.
+            </summary>
+        </member>
+        <member name="P:OfficeComponent.HtmlToPdf.PageSize.Height">
+            <summary>
+            Gets or sets the page width in mm.
+            </summary>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.Native.CreateDC(System.String,System.String,System.String,System.IntPtr)">
+            <summary>
+            The CreateDC function creates a device context (DC) for a device using the specified name.
+            </summary>
+            <param name="lpszDriver">Driver name.</param>
+            <param name="lpszDevice">Device name.</param>
+            <param name="lpszOutput">Not used; should be NULL.</param>
+            <param name="lpInitData">Optional printer data.</param>
+            <returns>If the function succeeds, the return value is the handle to a DC for the specified device.</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.Native.GetDeviceCaps(System.IntPtr,System.Int32)">
+            <summary>
+            The GetDeviceCaps function retrieves device-specific information
+            for the specified device.
+            </summary>
+            <param name="hdc">Handle to the DC.</param>
+            <param name="nIndex">Specifies the item to return. </param>
+            <returns>The return value specifies the value of the desired item. </returns>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfGraphicsUnit.Centimeter">
+            <summary>
+            Specifies the Measurement is in centimeters.
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfGraphicsUnit.Pica">
+            <summary>
+            Specifies the Measurement is in picas. A pica represents 12 points.
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfGraphicsUnit.Pixel">
+            <summary>
+            Specifies the unit of measurement is 1 pixel.
+            </summary>
+            <remarks>Pixel unit is device dependent unit. The result depends on the default Dpi on the machine.</remarks>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfGraphicsUnit.Point">
+            <summary>
+            Specifies a printer's point (1/72 inch) as the unit of measure. 
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfGraphicsUnit.Inch">
+            <summary>
+            Specifies the inch as the unit of measure. 
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfGraphicsUnit.Document">
+            <summary>
+            Specifies the document unit (1/300 inch) as the unit of measure.
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfGraphicsUnit.Millimeter">
+            <summary>
+            Specifies the Measurement is in millimeters.
+            </summary>
+        </member>
+        <member name="T:OfficeComponent.HtmlToPdf.PdfUnitConvertor">
+            <summary>
+            Class allowing to convert different unit metrics. Converting is 
+            based on Graphics object DPI settings that is why for differ
+            graphics settings must be created new instance. For example:
+            printers often has 300 and greater dpi resolution, for compare
+            default display screen dpi is 96.
+            </summary>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OfficeComponent.Pdf.Graphics.PdfUnitConvertor" /> class with default DPI value of 96.
+            </summary>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.#ctor(System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnitConvertor" /> class with DPI value
+            </summary>
+            <param name="dpi">The dpi.</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.#ctor(System.Drawing.Graphics)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnitConvertor" /> class with System.Drawing.Graphics.
+            </summary>
+            <remarks>This constructor is not supported in WinRT, Windows Phone, Xamarin, Universal Windows Platform and Silverlight.</remarks>
+            <param name="g">Graphics for measuring the DPI value</param>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.ConvertFromPixels(System.Single,OfficeComponent.HtmlToPdf.PdfGraphicsUnit)">
+            <summary>
+            Converts value, to specified graphics unit from Pixel.
+            </summary>
+            <param name="value">Value to convert</param>
+            <param name="to">Indicates units to convert to</param>
+            <returns>Value stored in "to" units</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.ConvertFromPixels(System.Drawing.RectangleF,OfficeComponent.HtmlToPdf.PdfGraphicsUnit)">
+            <summary>
+            Converts rectangle in Pixels into rectangle with specified 
+            measure units
+            </summary>
+            <param name="rect">source rectangle in pixels units</param>
+            <param name="to">convert to units</param>
+            <returns>output Rectangle in specified units</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.ConvertFromPixels(System.Drawing.PointF,OfficeComponent.HtmlToPdf.PdfGraphicsUnit)">
+            <summary>
+            Converts rectangle from pixels to specified units
+            </summary>
+            <param name="point">point in pixels units</param>
+            <param name="to">convert to units</param>
+            <returns>output Point in specified units</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.ConvertFromPixels(System.Drawing.SizeF,OfficeComponent.HtmlToPdf.PdfGraphicsUnit)">
+            <summary>
+            Converts Size in pixels to size in specified measure units
+            </summary>
+            <param name="size">source size</param>
+            <param name="to">convert to units</param>
+            <returns>output size in specified measure units</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.ConvertToPixels(System.Single,OfficeComponent.HtmlToPdf.PdfGraphicsUnit)">
+            <summary>
+            Converts the value to pixel from specified graphics unit.
+            </summary>
+            <param name="value">Value to convert</param>
+            <param name="from">Indicates units to convert from</param>
+            <returns>Value stored in pixels</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.ConvertToPixels(System.Drawing.RectangleF,OfficeComponent.HtmlToPdf.PdfGraphicsUnit)">
+            <summary>
+            Converts the rectangle location and size to Pixels from specified 
+            measure units
+            </summary>
+            <param name="rect">source rectangle</param>
+            <param name="from">source rectangle measure units</param>
+            <returns>Rectangle with Pixels</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.ConvertToPixels(System.Drawing.PointF,OfficeComponent.HtmlToPdf.PdfGraphicsUnit)">
+            <summary>
+            Converts point from specified graphics units to pixels
+            </summary>
+            <param name="point">source point for convert</param>
+            <param name="from">measure units</param>
+            <returns>point in pixels coordinates</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.ConvertToPixels(System.Drawing.SizeF,OfficeComponent.HtmlToPdf.PdfGraphicsUnit)">
+            <summary>
+            Converts size from specified graphics units to pixels
+            </summary>
+            <param name="size">source size</param>
+            <param name="from">measure units</param>
+            <returns>size in pixels</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.ConvertUnits(System.Single,OfficeComponent.HtmlToPdf.PdfGraphicsUnit,OfficeComponent.HtmlToPdf.PdfGraphicsUnit)">
+            <summary>
+            Converts the value, from one graphics unit to another graphics unit.
+            </summary>
+            <param name="value">Value to convert</param>
+            <param name="from">Indicates units to convert from</param>
+            <param name="to">Indicates units to convert to</param>
+            <returns>Value stored in "to" units</returns>
+        </member>
+        <member name="M:OfficeComponent.HtmlToPdf.PdfUnitConvertor.UpdateProportions(System.Single)">
+            <summary>
+            Update proportions matrix according to Graphics settings
+            </summary>
+            <param name="pixelPerInch">The pixel per inch value.</param>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfUnitConvertor.HorizontalResolution">
+            <summary>
+            Indicates default horizontal resolution.
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfUnitConvertor.HorizontalSize">
+            <summary>
+            Width, in millimeters, of the physical screen.
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfUnitConvertor.m_proportions">
+            <summary>
+            Matrix for conversations between different numeric systems
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfUnitConvertor.PxHorizontalResolution">
+            <summary>
+            Width, in pixels, of the screen.
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfUnitConvertor.PxVerticalResolution">
+            <summary>
+            Height, in pixels, of the screen.
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfUnitConvertor.VerticalResolution">
+            <summary>
+            Indicates default vertical resolution.
+            </summary>
+        </member>
+        <member name="F:OfficeComponent.HtmlToPdf.PdfUnitConvertor.VerticalSize">
+            <summary>
+            Height, in millimeters, of the physical screen.
+            </summary>
+        </member>
+    </members>
+</doc>
